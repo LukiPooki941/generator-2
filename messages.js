@@ -1,17 +1,19 @@
-const subject = ["Luke", "Jude", "Rapheal", "Max", "Lily"];
+const subject = ["Luke", "Jude", "Rapheal", "Max",];
 const verb = ["fights", "loves", "destroys", "builds", "mutates"];
-const object = ["Bosco", "Belle", "legos", "watches", "lump"];
+const object = ["Bosco", "Belle", "legos"];
 
-function randomPick(){
-    const numberGenerator = Math.floor(Math.random() *5);
+function randomPick(array){
+    const numberGenerator = Math.floor(Math.random() * array.length);
     return numberGenerator;
 };
-
-function message(){
-    const main = subject[randomPick()];
-    const action = verb[randomPick()];
-    const poorObject = object[randomPick()];
-    return `${main} ${action} ${poorObject}.`;
+function generateMessages(){
+    const newSubject = subject[randomPick(subject)]
+    const newVerb = verb[randomPick(verb)]
+    const newObject = object[randomPick(object)]
+    return `${newSubject} ${newVerb} ${newObject}`;
 }
 
-console.log(message());
+console.log(generateMessages());
+
+
+
